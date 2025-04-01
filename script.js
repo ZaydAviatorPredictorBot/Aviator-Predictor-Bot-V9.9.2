@@ -1,4 +1,3 @@
-// Function to validate activation code
 function validateActivationCode() {
     const inputCode = document.getElementById("activationCodeInput").value.trim();
     const correctCode = "GRN250";

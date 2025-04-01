@@ -1,75 +1,47 @@
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded successfully!");
+// Function to validate activation code
+function validateActivationCode() {
+    const inputCode = document.getElementById("activationCodeInput").value.trim();
+    const correctCode = "GRN250";
 
-    // Elements
-    const startButton = document.getElementById("startButton");
-    const continueButton = document.getElementById("continueButton");
-    const selectionSection = document.getElementById("selectionSection");
-    const welcomeSection = document.getElementById("welcomeSection");
-    const bettingSiteSelection = document.getElementById("bettingSiteSelection");
-    const bettingSiteIDSection = document.getElementById("bettingSiteIDSection");
-    const activationCodeSection = document.getElementById("activationCodeSection");
-    const getSignalSection = document.getElementById("getSignalSection");
-    const selectedSiteName = document.getElementById("selectedSiteName");
+    if (inputCode === correctCode) {
+        // Show the "GET SIGNAL" button if the code is correct
+        document.getElementById("getSignalButton").style.display = "block";
+    } else {
+        // Alert the user if the code is incorrect
+        alert("Invalid Activation Code. Please try again.");
+    }
+}
 
-    // Start Button Click
-    startButton.addEventListener("click", function () {
-        console.log("Start button clicked");
-        startSection.style.display = "none";
-        welcomeSection.style.display = "block";
-    });
+// Function to open the support link
+function contactSupport() {
+    window.open("https://t.me/zayd0011", "_blank");
+}
 
-    // Continue Button Click
-    continueButton.addEventListener("click", function () {
-        console.log("Continue button clicked");
-        welcomeSection.style.display = "none";
-        selectionSection.style.display = "block";
-    });
+// Function to display the live signal and simulate animation/error messages
+function getLiveSignal() {
+    // Open a new window for the animation and error messages
+    const newWindow = window.open("", "_blank", "width=500,height=500");
 
-    // Proceed to Betting Site Selection
-    window.goToBettingSiteSelection = function () {
-        console.log("Proceeding to betting site selection...");
-        selectionSection.style.display = "none";
-        bettingSiteSelection.style.display = "block";
-    };
+    // Add styles for animation
+    newWindow.document.write(`
+        <style>
+            body { text-align: center; font-family: Arial, sans-serif; padding: 20px; }
+            .aviator-animation { width: 100px; height: 100px; margin: 20px auto; animation: fly 2s infinite alternate; }
+            @keyframes fly { 0% { transform: translateY(0); } 100% { transform: translateY(-20px); } }
+            .error { color: red; font-weight: bold; font-size: 18px; margin-top: 20px; }
+            .warning { color: orange; font-size: 16px; }
+        </style>
+    `);
 
-    // Select a Betting Site
-    window.bettingSiteSelected = function (site) {
-        console.log("Betting site selected:", site);
-        bettingSiteSelection.style.display = "none";
-        bettingSiteIDSection.style.display = "block";
-        selectedSiteName.textContent = site;
-    };
+    // Add animated jet graphic
+    newWindow.document.write(`<img class="aviator-animation" src="https://via.placeholder.com/100" alt="Aviator Jet">`);
+    newWindow.document.write(`<p>Please wait as your bot is analyzing your betting site plane patterns to decipher the next plane crash digit...</p>`);
 
-    // Submit Betting Site ID
-    window.submitBettingSiteID = function () {
-        console.log("Betting site ID submitted");
-        bettingSiteIDSection.style.display = "none";
-        activationCodeSection.style.display = "block";
-    };
-
-    // Validate Activation Code
-    window.validateActivationCode = function () {
-        const activationCodeInput = document.getElementById("activationCodeInput").value;
-        
-        if (activationCodeInput.trim() === "12345") { // Example activation code
-            console.log("Activation successful!");
-            activationCodeSection.style.display = "none";
-            getSignalSection.style.display = "block";
-        } else {
-            alert("Invalid Activation Code. Please try again.");
-        }
-    };
-
-    // Get Live Signal (Placeholder Function)
-    window.getLiveSignal = function () {
-        console.log("Fetching live signal...");
-        alert("Live signal received!");
-    };
-
-    // Contact Support
-    window.contactSupport = function () {
-        alert("Contact support at: support@example.com");
-    };
-});
+    // Display error messages after 3 seconds
+    setTimeout(() => {
+        newWindow.document.write(`<p class="error">⚠️ Server error 675, transaction ID mismatch with device IP address configuration.</p>`);
+        newWindow.document.write(`<p class="warning">⚠️ Use your local device to do all your transactions.</p>`);
+        newWindow.document.write(`<p class="warning">⚠️ VPN/Proxy detected.</p>`);
+        newWindow.document.write(`<p class="warning">⚠️ Upgrade your package/contact admin.</p>`);
+    }, 3000);
+}

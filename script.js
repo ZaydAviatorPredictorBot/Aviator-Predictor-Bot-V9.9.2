@@ -1,3 +1,36 @@
+// Function to show the Language and Country Selection screen
+function startApp() {
+    document.getElementById("startSection").style.display = "none"; // Hide the start section
+    document.getElementById("selectionSection").style.display = "block"; // Show the language and country selection section
+}
+
+// Function to move from the Language and Country Selection to the Betting Site Selection
+function goToBettingSiteSelection() {
+    const language = document.getElementById("languageSelect").value;
+    const country = document.getElementById("countrySelect").value;
+
+    if (!language || !country) {
+        alert("Please select both language and country.");
+        return;
+    }
+
+    document.getElementById("selectionSection").style.display = "none"; // Hide language and country selection
+    document.getElementById("bettingSiteSelection").style.display = "block"; // Show the betting site selection section
+}
+
+// Function to show the Activation Code section after the user enters their Betting Site ID
+function submitBettingSiteID() {
+    const bettingSiteID = document.getElementById("bettingSiteIDInput").value.trim();
+    
+    if (bettingSiteID) {
+        document.getElementById("bettingSiteSelection").style.display = "none"; // Hide betting site selection
+        document.getElementById("activationCodeSection").style.display = "block"; // Show the activation code section
+    } else {
+        alert("Please enter your Betting Site ID.");
+    }
+}
+
+// Function to validate activation code
 function validateActivationCode() {
     const inputCode = document.getElementById("activationCodeInput").value.trim();
     const correctCode = "GRN250";

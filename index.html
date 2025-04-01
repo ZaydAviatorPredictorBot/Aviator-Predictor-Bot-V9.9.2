@@ -9,18 +9,11 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="spider-background">
 
     <!-- Welcome Screen -->
     <div id="startSection" class="container">
-        <button id="startButton" class="btn start-btn">START</button>
-    </div>
-
-    <!-- Welcome and Warning -->
-    <div id="welcomeSection" class="container" style="display: none;">
-        <h1>Welcome to <span class="highlight">Zayd Aviator Predictor Bot</span></h1>
-        <p class="warning-text">⚠️ WARNING: Software maximum usage is 12 hours per day ⚠️</p>
-        <button id="continueButton" class="btn">Continue</button>
+        <button id="startButton" class="btn start-btn" onclick="startApp()">START</button>
     </div>
 
     <!-- Language and Country Selection -->
@@ -45,17 +38,11 @@
                     "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
                     "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
                     "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
-                    "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Afghanistan", "Armenia", 
-                    "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", "Cyprus", 
-                    "Georgia", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", 
-                    "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", 
-                    "Nepal", "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar", "Saudi Arabia", 
-                    "Singapore", "South Korea", "Sri Lanka", "Syria", "Taiwan", "Tajikistan", "Thailand", 
-                    "Timor-Leste", "Turkey", "Turkmenistan", "United Arab Emirates", "Uzbekistan", "Vietnam", 
-                    "Yemen", "Argentina", "Bolivia", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", 
-                    "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", 
-                    "Peru", "Spain", "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
-                
+                    "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Argentina", "Bolivia", 
+                    "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", "Ecuador", "El Salvador", 
+                    "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Spain", 
+                    "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
+
                 // Dynamically create options
                 document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
             </script>
@@ -64,7 +51,7 @@
         <button class="btn" onclick="goToBettingSiteSelection()">Continue</button>
     </div>
 
-    <!-- Betting Site Selection -->
+    <!-- Betting Site Selection Section -->
     <div id="bettingSiteSelection" class="container" style="display: none;">
         <h2>Select Your Betting Site</h2>
         <div class="betting-sites">
@@ -81,18 +68,14 @@
                     "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
                     "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
                 ];
-                
-                // Dynamically create betting site options
+
                 document.write(bettingSites.map(site => 
                     `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
                 ).join(''));
             </script>
         </div>
-    </div>
 
-    <!-- Betting Site ID Input Section -->
-    <div id="bettingSiteIDSection" class="container" style="display: none;">
-        <h2>Enter Your Betting Site ID for <span id="selectedSiteName"></span></h2>
+        <h3>Enter your Betting Site ID:</h3>
         <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
         <button class="btn" onclick="submitBettingSiteID()">Continue</button>
     </div>
@@ -107,56 +90,6 @@
         <!-- GET SIGNAL button (hidden initially) -->
         <button id="getSignalButton" class="btn signal-btn" style="display: none;" onclick="getLiveSignal()">GET SIGNAL</button>
     </div>
-
-    <!-- Live Signal Section -->
-    <div id="getSignalSection" class="container" style="display: none;">
-        <button class="btn signal-btn" onclick="getLiveSignal()">Get Signal</button>
-    </div>
-
-    <script>
-        function validateActivationCode() {
-            const inputCode = document.getElementById("activationCodeInput").value.trim();
-            const correctCode = "GRN250";
-
-            if (inputCode === correctCode) {
-                document.getElementById("getSignalButton").style.display = "block"; // Show "GET SIGNAL" button
-            } else {
-                alert("Invalid Activation Code. Please try again.");
-            }
-        }
-
-        function contactSupport() {
-            window.open("https://t.me/zayd0011", "_blank");
-        }
-
-        function getLiveSignal() {
-            // Open a new window for animation and error messages
-            const newWindow = window.open("", "_blank", "width=500,height=500");
-
-            // Add styles for animation
-            newWindow.document.write(`
-                <style>
-                    body { text-align: center; font-family: Arial, sans-serif; padding: 20px; }
-                    .aviator-animation { width: 100px; height: 100px; margin: 20px auto; animation: fly 2s infinite alternate; }
-                    @keyframes fly { 0% { transform: translateY(0); } 100% { transform: translateY(-20px); } }
-                    .error { color: red; font-weight: bold; font-size: 18px; margin-top: 20px; }
-                    .warning { color: orange; font-size: 16px; }
-                </style>
-            `);
-
-            // Add animated jet graphic
-            newWindow.document.write(`<img class="aviator-animation" src="https://via.placeholder.com/100" alt="Aviator Jet">`);
-            newWindow.document.write(`<p>Please wait as your bot is analyzing your betting site plane patterns to decipher the next plane crash digit...</p>`);
-
-            // Display error messages after 3 seconds
-            setTimeout(() => {
-                newWindow.document.write(`<p class="error">⚠️ Server error 675, transaction ID mismatch with device IP address configuration.</p>`);
-                newWindow.document.write(`<p class="warning">⚠️ Use your local device to do all your transactions.</p>`);
-                newWindow.document.write(`<p class="warning">⚠️ VPN/Proxy detected.</p>`);
-                newWindow.document.write(`<p class="warning">⚠️ Upgrade your package/contact admin.</p>`);
-            }, 3000);
-        }
-    </script>
 
 </body>
 

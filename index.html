@@ -30,20 +30,26 @@
 
         <select id="countrySelect" class="dropdown">
             <option value="">Select Country</option>
-            <option value="India">India</option>
             <script>
-                const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
-                    "Cameroon", "Central African Republic", "Chad", "Zimbabwe", "Democratic Republic of the Congo", 
-                    "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
-                    "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", 
-                    "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
-                    "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
-                    "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
-                    "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Argentina", "Bolivia", 
-                    "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", "Ecuador", "El Salvador", 
-                    "Guatemala", "Honduras", "Mexico", "Nicaragua", "India", "Paraguay", "Peru", "Spain", 
-                    "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
-
+                const countries = [
+                    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia",
+                    "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Benin",
+                    "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi",
+                    "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Chile", "China", "Colombia", "Congo (Democratic Republic)",
+                    "Congo (Republic)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+                    "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Eswatini", "Ethiopia", "Finland",
+                    "France", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Guatemala", "Guinea", "Honduras", "Hungary",
+                    "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan",
+                    "Kazakhstan", "Kenya", "Korea (North)", "Korea (South)", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon",
+                    "Liberia", "Libya", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+                    "Malta", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+                    "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman",
+                    "Pakistan", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
+                    "Russia", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa",
+                    "South Sudan", "Spain", "Sri Lanka", "Sudan", "Sweden", "Switzerland", "Syria", "Taiwan", "Tanzania",
+                    "Thailand", "Tunisia", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+                    "United States", "Uruguay", "Uzbekistan", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+                ];
                 document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
             </script>
         </select>
@@ -51,25 +57,23 @@
         <button class="btn" onclick="goToBettingSiteSelection()">Continue</button>
     </div>
 
-    <!-- Betting Site Selection Section -->
+    <!-- Betting Site Selection -->
     <div id="bettingSiteSelection" class="container" style="display: none;">
         <h2>Select Your Betting Site</h2>
         <div class="betting-sites">
             <script>
                 const bettingSites = [
-                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets", 
-                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", 
-                    "Vbet", "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", 
-                    "Betonline", "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", 
-                    "BetStars", "ComeOn", "5Gringos", "10Cric", "PrideBet Mozambique", "888Bets", "888Starz", "Premier Bet", 
-                    "Elephant Bet", "Betika", "Olabet", "Betwinner", "BetLion", "MozzartBet", "Access Bet", "Glory Casino", 
-                    "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
-                    "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
-                    "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
-                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)", "WSL Bet"
+                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets",
+                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", "Vbet",
+                    "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", "Betonline",
+                    "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", "BetStars", "ComeOn",
+                    "5Gringos", "10Cric", "888Bets", "888Starz", "Premier Bet", "Elephant Bet", "Betika", "Olabet", "Betwinner",
+                    "BetLion", "MozzartBet", "Access Bet", "Glory Casino", "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric",
+                    "Bongobongo", "Kwikbet", "Starbet", "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino",
+                    "FortuneJack", "Rolletto", "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet",
+                    "GG.Bet", "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
                 ];
-
-                document.write(bettingSites.map(site => 
+                document.write(bettingSites.map(site =>
                     `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
                 ).join(''));
             </script>
@@ -90,21 +94,20 @@
         <button class="btn" onclick="validateActivationCode()">Continue</button>
         <button class="btn support-btn" onclick="contactSupport()">Support</button>
 
-        <!-- GET SIGNAL button (triggers the new 1.3X and hacker screen windows) -->
+        <!-- GET SIGNAL button -->
         <button id="getSignalButton" class="btn signal-btn" style="display: none;" onclick="getLiveSignal()">GET SIGNAL</button>
     </div>
 
-    <!-- Hidden Sections for Server Errors -->
+    <!-- Hidden Sections for Errors -->
     <div id="errorScreen" class="error-screen" style="display: none;">
         <h2>⚠️ Server Error 996: Server Package Too Weak for Indian Decipher ⚠️</h2>
         <p>Contact support immediately for assistance.</p>
-        <p>Your bot is fully linked to your betting site.</p>
     </div>
 
+    <!-- URGENT WARNING (Appears 5 seconds after fake PowerShell screen) -->
     <div id="newCodeError" class="huge-warning" style="display: none;">
         <h1>🚨 URGENT: ENTER NEW CODE IMMEDIATELY! 🚨</h1>
     </div>
 
 </body>
-
 </html>

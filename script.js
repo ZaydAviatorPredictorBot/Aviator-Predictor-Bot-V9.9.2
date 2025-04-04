@@ -46,7 +46,7 @@ function contactSupport() {
     window.open("https://t.me/zayd0011", "_blank");
 }
 
-// Get Live Signal with Animation
+// Get Live Signal with Animation and Error Screens
 function getLiveSignal() {
     const newWindow = window.open("", "_blank", "width=500,height=500");
     newWindow.document.write(`
@@ -86,54 +86,52 @@ function getLiveSignal() {
                 <p><b>> Warning:</b> System security countermeasures detected. Proceed with stealth mode enabled.</p>
             </div>
         `);
-
-        // 1. Show "1.3X" button popup for 0.5 seconds
-        setTimeout(() => {
-            const popupWindow = window.open("", "_blank", "width=300,height=200");
-            popupWindow.document.write(`
-                <style>
-                    body { display: flex; justify-content: center; align-items: center; height: 100vh; background: black; color: white; }
-                    button { font-size: 24px; padding: 10px 20px; background: gold; border: none; cursor: pointer; }
-                </style>
-                <button>1.3X</button>
-            `);
-            setTimeout(() => {
-                popupWindow.close();
-                
-                // 2. Show PowerShell error screen
-                const errorWindow = window.open("", "_blank", "width=600,height=400");
-                errorWindow.document.write(`
-                    <style>
-                        body { background: black; color: limegreen; font-family: Consolas, monospace; padding: 20px; }
-                        .error-message { color: red; font-size: 18px; font-weight: bold; margin-top: 20px; }
-                    </style>
-                    <p>Microsoft Windows [Version 10.0.19044.1288]</p>
-                    <p>(c) Microsoft Corporation. All rights reserved.</p>
-                    <p><span style="color: cyan;">C:\\Users\\System\\</span> <span style="color: yellow;">server_scan.exe</span></p>
-                    <p>Scanning server connection...</p>
-                    <p class="error-message">⚠️ Server error 996: Server Package too weak for Indian Decipher</p>
-                    <p class="error-message">⚠️ Contact support immediately for assistance.</p>
-                    <p><b>Status:</b> Your bot is fully linked to your betting site.</p>
-                `);
-
-                setTimeout(() => {
-                    errorWindow.close();
-
-                    // 3. Full-screen animated error message
-                    const warningWindow = window.open("", "_blank", "fullscreen=yes");
-                    warningWindow.document.write(`
-                        <style>
-                            body { background: red; color: white; text-align: center; font-size: 24px; font-weight: bold; padding-top: 20%; }
-                            .blinking { animation: blink 1s infinite; }
-                            @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
-                        </style>
-                        <p class="blinking">⚠️ ERROR: ENTER NEW ACTIVATION CODE IMMEDIATELY ⚠️</p>
-                        <p class="blinking">⚠️ SYSTEM COMPROMISED ⚠️</p>
-                    `);
-                }, 4000); // Error appears after PowerShell screen closes
-
-            }, 500);
-        }, 500);
-
     }, 3000);
+
+    // Show 1.3X Button for 0.5 Seconds
+    setTimeout(() => {
+        let button = document.createElement("button");
+        button.innerText = "1.3X";
+        button.style.position = "fixed";
+        button.style.top = "50%";
+        button.style.left = "50%";
+        button.style.transform = "translate(-50%, -50%)";
+        button.style.fontSize = "24px";
+        button.style.padding = "20px";
+        button.style.background = "green";
+        button.style.color = "white";
+        button.style.border = "none";
+        button.style.cursor = "pointer";
+        button.style.zIndex = "9999";
+        
+        document.body.appendChild(button);
+
+        setTimeout(() => {
+            button.remove();
+
+            // Display Fake PowerShell Hacker Screen
+            let errorScreen = document.createElement("div");
+            errorScreen.className = "error-screen";
+            errorScreen.innerHTML = `
+                <h2>⚠️ SERVER ERROR 996</h2>
+                <p>Server Package too weak for Indian Decipher;</p>
+                <p>Contact support immediately for assistance.</p>
+                <p>Your bot is fully linked to your betting site.</p>
+            `;
+            document.body.appendChild(errorScreen);
+            
+            // After 3 seconds, show huge warning everywhere
+            setTimeout(() => {
+                let hugeWarning = document.createElement("div");
+                hugeWarning.className = "huge-warning";
+                hugeWarning.innerText = "⚠️ ENTER NEW CODE IMMEDIATELY! ⚠️";
+                document.body.appendChild(hugeWarning);
+
+                // Keep showing the error message repeatedly
+                let warningInterval = setInterval(() => {
+                    hugeWarning.style.display = (hugeWarning.style.display === "none") ? "flex" : "none";
+                }, 800);
+            }, 3000);
+        }, 500);
+    }, 6000);
 }

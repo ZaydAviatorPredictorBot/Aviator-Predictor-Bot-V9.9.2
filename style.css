@@ -1,194 +1,58 @@
+/* ERROR SCREEN ANIMATION */
+.error-screen {
+    display: none;
+    color: red;
+    font-size: 22px;
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+    border: 2px solid red;
+    animation: glitch 1s infinite;
+}
+
+/* Red Flashing Animation */
+@keyframes glitch {
+    0% { text-shadow: 0px 0px 5px red; }
+    50% { text-shadow: 0px 0px 15px red; }
+    100% { text-shadow: 0px 0px 5px red; }
+}
+
+/* URGENT WARNING FLASH */
+.huge-warning {
+    display: none;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    background: red;
+    padding: 30px;
+    border: 3px solid black;
+    animation: flash 0.5s infinite;
+}
+
+/* Flashing Animation */
+@keyframes flash {
+    0% { background: red; }
+    50% { background: black; color: red; }
+    100% { background: red; }
+}
+
 /* General Styles */
 body {
-    font-family: 'Courier New', monospace;
-    background: #111;
+    font-family: "Courier New", monospace;
+    background-color: black;
     color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
-/* Containers */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-}
-
-/* Buttons */
 .btn {
-    background: linear-gradient(45deg, #ff6b6b, #ffcc5c);
-    border: none;
-    padding: 15px 25px;
-    margin: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    background-color: #00ff00;
     color: black;
-    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #ffcc5c, #ff6b6b);
-}
-
-/* Start Button */
-.start-btn {
-    font-size: 22px;
-    padding: 20px 35px;
-    background: #ff4444;
-    color: white;
-    border-radius: 12px;
-}
-
-.start-btn:hover {
-    background: #cc0000;
-}
-
-/* Dropdown */
-.dropdown {
-    width: 80%;
-    max-width: 300px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 2px solid #ff6b6b;
-    background: #222;
-    color: white;
-}
-
-/* Betting Site Selection */
-.betting-sites {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 90%;
-    margin-top: 20px;
-    overflow-y: auto; /* Enables scrolling for overflow */
-    max-height: 80vh; /* Ensures the section is accessible on mobile */
-    padding: 10px;
-}
-
-/* Betting Site Items */
-.site {
-    padding: 10px;
-    margin: 5px;
-    border: 2px solid #ffcc5c;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.site:hover {
-    background: #ffcc5c;
-    color: black;
-}
-
-/* Inputs */
-.input {
-    padding: 10px;
-    font-size: 18px;
-    width: 80%;
-    max-width: 300px;
-    border: 2px solid #ff6b6b;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-    text-align: center;
-}
-
-/* Signal Button */
-.signal-btn {
-    background: #00ff00;
-    font-size: 20px;
-    padding: 15px 30px;
-    border-radius: 10px;
-    animation: glow 1.5s infinite alternate;
-}
-
-.signal-btn:hover {
-    background: #00cc00;
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 10px #00ff00;
-    }
-    100% {
-        box-shadow: 0 0 20px #00ff00;
-    }
-}
-
-/* Hacker-Style Error Screen */
-.error-screen {
-    background: black;
-    color: limegreen;
-    font-family: 'Courier New', monospace;
-    padding: 30px;
-    text-align: left;
-    width: 90%;
-    max-width: 700px;
-    margin: auto;
-    border: 3px solid red;
-    box-shadow: 0 0 20px red;
-}
-
-.error-screen h2 {
-    color: red;
-}
-
-.error-screen p {
-    color: limegreen;
-    font-size: 18px;
-}
-
-/* Huge Warning Alert */
-.huge-warning {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 0, 0, 0.9);
-    color: yellow;
-    font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 2px 2px black;
-    animation: flicker 0.8s infinite alternate;
-}
-
-@keyframes flicker {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.6;
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .container {
-        height: auto;
-        padding: 20px;
-    }
-
-    .betting-sites {
-        max-height: 60vh; /* Adjusts to fit smaller screens */
-        width: 100%;
-    }
-
-    .site {
-        font-size: 14px;
-        padding: 8px;
-    }
+    background-color: #0f0;
+    box-shadow: 0px 0px 10px #0f0;
 }

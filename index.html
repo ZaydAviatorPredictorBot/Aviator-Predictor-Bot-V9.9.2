@@ -93,20 +93,20 @@
         <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code">
         <button class="btn" onclick="validateActivationCode()">Continue</button>
         <button class="btn support-btn" onclick="contactSupport()">Support</button>
-
-        <!-- GET SIGNAL button -->
         <button id="getSignalButton" class="btn signal-btn" style="display: none;" onclick="getLiveSignal()">GET SIGNAL</button>
     </div>
 
-    <!-- Sections for Errors lasting 4 seconds-->
+    <!-- Server Error Message -->
     <div id="errorScreen" class="error-screen" style="display: none;">
         <h2>⚠️ Server Error 996: Server Package Too Weak for Indian Decipher ⚠️</h2>
         <p>Contact support immediately for assistance.</p>
     </div>
 
-    <!-- URGENT WARNING (Appears 5 seconds after fake PowerShell screen) -->
+    <!-- URGENT WARNING -->
     <div id="newCodeError" class="huge-warning" style="display: none;">
-        <h1>🚨 URGENT: ENTER NEW CODE IMMEDIATELY! 🚨</h1>
+        <h1>🚨 URGENT: IMMEDIATE UPGRADE REQUIRED! CONTACT SUPPORT NOW! 🚨</h1>
+        <p>Your system cannot process signals with the current package.</p>
+        <button class="btn support-btn" onclick="contactSupport()">🔧 Contact Support</button>
     </div>
 
 </body>

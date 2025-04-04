@@ -1,111 +1,85 @@
-// Start Button Click Handler
-document.getElementById("startButton").addEventListener("click", function () {
-    document.getElementById("startSection").style.display = "none";
-    document.getElementById("selectionSection").style.display = "flex";
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("startButton").addEventListener("click", startProcess);
 });
 
-// Navigate to Betting Site Selection
-function goToBettingSiteSelection() {
-    document.getElementById("selectionSection").style.display = "none";
-    document.getElementById("bettingSiteSelection").style.display = "flex";
+function startProcess() {
+    document.getElementById("startSection").style.display = "none";
+    document.getElementById("selectionSection").style.display = "block";
 }
 
-// Betting Site Selection Handler
+// Betting Site Selection
 function bettingSiteSelected(siteName) {
     document.getElementById("bettingSiteSelection").style.display = "none";
-    document.getElementById("bettingSiteIDSection").style.display = "flex";
+    document.getElementById("bettingSiteIDSection").style.display = "block";
     document.getElementById("selectedSiteName").textContent = siteName;
 }
 
-// Submit Betting Site ID
 function submitBettingSiteID() {
     document.getElementById("bettingSiteIDSection").style.display = "none";
-    document.getElementById("activationCodeSection").style.display = "flex";
+    document.getElementById("activationCodeSection").style.display = "block";
 }
 
-// Validate Activation Code
+// Activation Code Validation
 function validateActivationCode() {
-    const enteredCode = document.getElementById("activationCodeInput").value.trim();
-    if (enteredCode === "GRN250") {
-        document.getElementById("getSignalButton").style.display = "block"; // Show GET SIGNAL Button
+    let code = document.getElementById("activationCodeInput").value.trim();
+    if (code === "GRN250") {
+        document.getElementById("activationCodeSection").style.display = "none";
+        document.getElementById("getSignalButton").style.display = "block";
     } else {
-        alert("❌ Invalid Activation Code! Please try again.");
+        showErrorScreen();
     }
 }
 
-// Contact Support
-function contactSupport() {
-    window.open("https://t.me/zayd0011", "_blank");
+// Show Error Screen
+function showErrorScreen() {
+    document.body.style.backgroundColor = "#000"; // Black background for hacker theme
+    let errorScreen = document.getElementById("errorScreen");
+    errorScreen.style.display = "block";
+    errorScreen.classList.add("error-animation"); // Add animation
+
+    setTimeout(showUrgentWarning, 5000); // Show urgent warning after 5 sec
 }
 
-// Get Live Signal Handler
+// Show Urgent Warning After 5 Sec
+function showUrgentWarning() {
+    let warning = document.getElementById("newCodeError");
+    warning.style.display = "block";
+    warning.classList.add("warning-flash"); // Add red flashing effect
+}
+
+// Get Live Signal Button
 function getLiveSignal() {
-    // Open new window for 1.3X Button
-    let xButtonWindow = window.open("", "_blank", "width=400,height=200");
-    xButtonWindow.document.write(`
-        <html>
-        <head>
-            <title>1.3X Predictor</title>
-            <style>
-                body {
-                    font-family: 'Courier New', monospace;
-                    background: black;
-                    color: lime;
-                    text-align: center;
-                    padding: 50px;
-                }
-                .x-btn {
-                    font-size: 24px;
-                    font-weight: bold;
-                    padding: 15px 30px;
-                    background: red;
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 10px;
-                }
-            </style>
-        </head>
-        <body>
-            <h2>🚀 1.3X Signal Ready!</h2>
-            <button class="x-btn">1.3X</button>
-        </body>
-        </html>
-    `);
-
-    // Close 1.3X window after 10 seconds and open hacker screen
+    let getSignalButton = document.getElementById("getSignalButton");
+    getSignalButton.innerHTML = "Processing...";
+    
     setTimeout(() => {
-        xButtonWindow.close();
+        getSignalButton.innerHTML = "GET SIGNAL";
+        openPowerShellScreen();
+    }, 3000);
+}
 
-        // Open new Fake PowerShell Hacker Screen
-        let hackerWindow = window.open("", "_blank", "width=600,height=400");
-        hackerWindow.document.write(`
-            <html>
-            <head>
-                <title>PowerShell Terminal</title>
-                <style>
-                    body {
-                        font-family: 'Courier New', monospace;
-                        background: black;
-                        color: limegreen;
-                        padding: 20px;
-                    }
-                    .log {
-                        font-size: 16px;
-                        line-height: 1.5;
-                    }
-                </style>
-            </head>
-            <body>
-                <h3>Windows PowerShell</h3>
-                <p class="log">PS C:\\Users\\Admin> Initiating signal injection...</p>
-                <p class="log">PS C:\\Users\\Admin> Connecting to Aviator AI Core...</p>
-                <p class="log">PS C:\\Users\\Admin> Data linked successfully.</p>
-                <p class="log">PS C:\\Users\\Admin> Authenticating...</p>
-                <p class="log">PS C:\\Users\\Admin> Signal injected ✅</p>
-                <p class="log">PS C:\\Users\\Admin> Exit</p>
-            </body>
-            </html>
-        `);
-    }, 10000);
+// Fake PowerShell Screen (New Window)
+function openPowerShellScreen() {
+    let powerShellWindow = window.open("", "", "width=500,height=300");
+    powerShellWindow.document.body.style.backgroundColor = "#000";
+    powerShellWindow.document.body.style.color = "#0f0"; // Green text for hacker effect
+    powerShellWindow.document.body.style.fontFamily = "Courier New";
+    powerShellWindow.document.body.innerHTML = `
+        <pre>
+        Microsoft Windows [Version 10.0.22000.795]
+        (c) Microsoft Corporation. All rights reserved.
+
+        C:\Users\Public> _Analyzing_Device_ID...
+        C:\Users\Public> _VPN/Proxy_Detected!
+        C:\Users\Public> _Transaction_ID_Error: 675
+        C:\Users\Public> _Initiating_Emergency_Security_Protocol...
+        </pre>
+    `;
+
+    setTimeout(showUrgentWarning, 5000); // Show urgent warning after 5 sec
+}
+
+// Contact Support Function
+function contactSupport() {
+    window.open("https://t.me/zayd0011", "_blank");
 }

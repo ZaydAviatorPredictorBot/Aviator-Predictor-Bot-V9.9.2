@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("startButton").addEventListener("click", startProcess);
+    document.getElementById("startButton").addEventListener("click", startBot);
 });
 
-function startProcess() {
+function startBot() {
     document.getElementById("startSection").style.display = "none";
     document.getElementById("selectionSection").style.display = "block";
 }
 
-// Betting Site Selection
-function bettingSiteSelected(siteName) {
+function goToBettingSiteSelection() {
+    document.getElementById("selectionSection").style.display = "none";
+    document.getElementById("bettingSiteSelection").style.display = "block";
+}
+
+function bettingSiteSelected(site) {
     document.getElementById("bettingSiteSelection").style.display = "none";
     document.getElementById("bettingSiteIDSection").style.display = "block";
-    document.getElementById("selectedSiteName").textContent = siteName;
+    document.getElementById("selectedSiteName").innerText = site;
 }
 
 function submitBettingSiteID() {
@@ -19,67 +23,45 @@ function submitBettingSiteID() {
     document.getElementById("activationCodeSection").style.display = "block";
 }
 
-// Activation Code Validation
 function validateActivationCode() {
-    let code = document.getElementById("activationCodeInput").value.trim();
+    let code = document.getElementById("activationCodeInput").value;
     if (code === "GRN250") {
-        document.getElementById("activationCodeSection").style.display = "none";
         document.getElementById("getSignalButton").style.display = "block";
     } else {
-        showErrorScreen();
+        alert("Invalid Activation Code!");
     }
 }
 
-// Show Error Screen
-function showErrorScreen() {
-    document.body.style.backgroundColor = "#000"; // Black background for hacker theme
-    let errorScreen = document.getElementById("errorScreen");
-    errorScreen.style.display = "block";
-    errorScreen.classList.add("error-animation"); // Add animation
-
-    setTimeout(showUrgentWarning, 5000); // Show urgent warning after 5 sec
-}
-
-// Show Urgent Warning After 5 Sec
-function showUrgentWarning() {
-    let warning = document.getElementById("newCodeError");
-    warning.style.display = "block";
-    warning.classList.add("warning-flash"); // Add red flashing effect
-}
-
-// Get Live Signal Button
 function getLiveSignal() {
-    let getSignalButton = document.getElementById("getSignalButton");
-    getSignalButton.innerHTML = "Processing...";
-    
-    setTimeout(() => {
-        getSignalButton.innerHTML = "GET SIGNAL";
-        openPowerShellScreen();
-    }, 3000);
-}
+    document.getElementById("activationCodeSection").style.display = "none";
 
-// Fake PowerShell Screen (New Window)
-function openPowerShellScreen() {
-    let powerShellWindow = window.open("", "", "width=500,height=300");
-    powerShellWindow.document.body.style.backgroundColor = "#000";
-    powerShellWindow.document.body.style.color = "#0f0"; // Green text for hacker effect
-    powerShellWindow.document.body.style.fontFamily = "Courier New";
-    powerShellWindow.document.body.innerHTML = `
-        <pre>
-        Microsoft Windows [Version 10.0.22000.795]
-        (c) Microsoft Corporation. All rights reserved.
+    // Fake Windows PowerShell screen
+    let powershellWindow = window.open("", "", "width=600,height=400");
+    powershellWindow.document.write(`
+        <html>
+        <head><title>Windows PowerShell</title></head>
+        <body style="background:black; color:lime; font-family:monospace; padding:20px;">
+            <h3>Microsoft Windows [Version 10.0.19044.2006]</h3>
+            <p>C:\\Users\\Admin> Connecting to server...</p>
+            <p>C:\\Users\\Admin> Decoding Signal Data...</p>
+            <p>C:\\Users\\Admin> Fetching Transaction ID...</p>
+            <p style="color:red;">ERROR: VPN/Proxy detected</p>
+            <p>C:\\Users\\Admin> Please wait...</p>
+        </body>
+        </html>
+    `);
 
-        C:\Users\Public> _Analyzing_Device_ID...
-        C:\Users\Public> _VPN/Proxy_Detected!
-        C:\Users\Public> _Transaction_ID_Error: 675
-        C:\Users\Public> _Initiating_Emergency_Security_Protocol...
-        </pre>
-    `;
-
-    setTimeout(showUrgentWarning, 5000); // Show urgent warning after 5 sec
-}
-
-// Contact Support Function
-function contactSupport() {
-    window.open("https://t.me/zayd0011", "_blank");
+    // After 5 seconds, show the urgent warning in a new window
+    setTimeout(function () {
+        let warningWindow = window.open("", "", "width=600,height=400");
+        warningWindow.document.write(`
+            <html>
+            <head><title>URGENT WARNING</title></head>
+            <body style="background:black; color:red; text-align:center; font-family:Arial, sans-serif; padding:20px;">
+                <h1>🚨 URGENT: ENTER NEW CODE IMMEDIATELY! 🚨</h1>
+                <p>System detected an issue. Re-enter activation code.</p>
+            </body>
+            </html>
+        `);
+    }, 5000); // 5 seconds delay for warning window
 }

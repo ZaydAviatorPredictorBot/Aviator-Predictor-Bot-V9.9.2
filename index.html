@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -13,7 +13,7 @@
 
     <!-- Welcome Screen -->
     <div id="startSection" class="container">
-        <button id="startButton" class="btn start-btn" onclick="startApp()">START</button>
+        <button id="startButton" class="btn start-btn">START</button>
     </div>
 
     <!-- Language and Country Selection -->
@@ -30,6 +30,7 @@
 
         <select id="countrySelect" class="dropdown">
             <option value="">Select Country</option>
+            <option value="India">India</option>
             <script>
                 const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
                     "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", 
@@ -43,7 +44,6 @@
                     "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Spain", 
                     "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
 
-                // Dynamically create options
                 document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
             </script>
         </select>
@@ -66,7 +66,7 @@
                     "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
                     "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
                     "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
-                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
+                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)", "WSL Bet"
                 ];
 
                 document.write(bettingSites.map(site => 
@@ -74,8 +74,11 @@
                 ).join(''));
             </script>
         </div>
+    </div>
 
-        <h3>Enter your Betting Site ID:</h3>
+    <!-- Betting Site ID Entry -->
+    <div id="bettingSiteIDSection" class="container" style="display: none;">
+        <h3>Enter your Betting Site ID for <span id="selectedSiteName"></span>:</h3>
         <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
         <button class="btn" onclick="submitBettingSiteID()">Continue</button>
     </div>

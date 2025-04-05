@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open new window for 3.4X Button
+    // Open 2.4X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>3.4X Predictor</title>
+            <title>2.4X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,17 +80,17 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 3.4X Signal Ready!</h2>
-            <button class="x-btn">3.4X</button>
+            <h2>🚀 2.4X Signal Ready!</h2>
+            <button class="x-btn">2.4X</button>
         </body>
         </html>
     `);
 
-    // Close 3.4X window after 10 seconds and open hacker screen
+    // After 10 sec, close signal window and show hacker screen
     setTimeout(() => {
         xButtonWindow.close();
 
-        // Open new Fake PowerShell Hacker Screen
+        // Open fake hacker PowerShell window
         let hackerWindow = window.open("", "_blank", "width=600,height=400");
         hackerWindow.document.write(`
             <html>
@@ -121,60 +121,98 @@ function getLiveSignal() {
             </html>
         `);
 
-        // Show URGENT UPGRADE WARNING after 5 seconds
+        // Show URGENT UPGRADE WARNING in same window after 5 seconds
         setTimeout(() => {
-            let warningWindow = window.open("", "_blank", "width=1000,height=600");
-            warningWindow.document.write(`
-                <html>
-                <head>
-                    <title>🚨 UPGRADE REQUIRED 🚨</title>
+            document.body.innerHTML = `
+                <div id="urgentUpgradeContainer">
                     <style>
-                        body { 
-                            background-color: black; 
-                            color: red; 
-                            font-family: 'Arial', sans-serif; 
-                            text-align: center; 
-                            padding: 50px; 
+                        body {
+                            margin: 0;
+                            padding: 0;
+                            background: black;
+                            overflow: hidden;
+                            font-family: 'Courier New', monospace;
+                            animation: bgPulse 2s infinite alternate;
                         }
-                        h1 { 
-                            font-size: 50px; 
-                            animation: pulse 1s infinite; 
+                        #urgentUpgradeContainer {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            color: #FF0000;
+                            text-align: center;
+                            padding: 20px;
+                            animation: shake 0.5s infinite;
                         }
-                        p {
+                        h1 {
+                            font-size: 60px;
+                            text-shadow: 0 0 10px red, 0 0 20px yellow;
+                            animation: flash 1s infinite;
+                        }
+                        .warning-line {
                             font-size: 24px;
-                            margin-top: 20px;
+                            margin: 10px;
+                            color: #ff6666;
+                            animation: flicker 1.5s infinite alternate;
+                        }
+                        .highlight {
+                            color: yellow;
+                            font-weight: bold;
+                            text-shadow: 0 0 10px yellow;
                         }
                         .contact-btn {
+                            margin-top: 40px;
+                            padding: 15px 40px;
+                            font-size: 24px;
+                            font-weight: bold;
                             background: red;
                             color: white;
-                            padding: 15px 30px;
-                            font-size: 22px;
-                            font-weight: bold;
-                            border: none;
+                            border: 2px solid yellow;
+                            border-radius: 15px;
                             cursor: pointer;
-                            border-radius: 10px;
-                            margin-top: 20px;
+                            animation: glow 1s infinite alternate;
+                            box-shadow: 0 0 30px red;
                         }
-                        @keyframes pulse { 
-                            0% { transform: scale(1); } 
-                            50% { transform: scale(1.1); } 
-                            100% { transform: scale(1); } 
+                        @keyframes bgPulse {
+                            0% { background-color: black; }
+                            100% { background-color: #330000; }
+                        }
+                        @keyframes flash {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0.3; }
+                        }
+                        @keyframes flicker {
+                            0% { opacity: 0.8; }
+                            100% { opacity: 1; }
+                        }
+                        @keyframes glow {
+                            from { box-shadow: 0 0 10px red; }
+                            to { box-shadow: 0 0 30px yellow; }
+                        }
+                        @keyframes shake {
+                            0%, 100% { transform: translate(0, 0); }
+                            25% { transform: translate(2px, -2px); }
+                            50% { transform: translate(-2px, 2px); }
+                            75% { transform: translate(2px, 2px); }
                         }
                     </style>
-                </head>
-                <body>
-                    <h1>🚨 URGENT: IMMEDIATE UPGRADE REQUIRED! 🚨</h1>
-                    <p>Your system cannot process signals with the current package.</p>
-                    <p>Contact support now to upgrade and continue using the software.</p>
-                    <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🔧 Contact Support</button>
-                </body>
-                </html>
-            `);
+
+                    <h1>🚨 SYSTEM OVERRIDE: UPGRADE REQUIRED 🚨</h1>
+                    <div class="warning-line">❌ Multiple Transactions Detected</div>
+                    <div class="warning-line highlight">⚠️ You MUST make only <u>ONE</u> transaction</div>
+                    <div class="warning-line">❌ Device & IP mismatch</div>
+                    <div class="warning-line highlight">⚠️ Use the <u>same device</u> and keep the <u>same IP address</u></div>
+                    <div class="warning-line">❌ Package authentication failed</div>
+                    <div class="warning-line highlight">⚠️ Upgrade required to unlock access</div>
+                    <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
+                </div>
+            `;
         }, 5000);
     }, 10000);
 }
 
-// Contact Support
+// Contact Support (optional backup)
 function contactSupport() {
     window.open("https://t.me/zayd0011", "_blank");
 }

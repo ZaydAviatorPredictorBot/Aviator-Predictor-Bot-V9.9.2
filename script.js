@@ -42,7 +42,7 @@ function submitBettingSiteID() {
 function validateActivationCode() {
     let activationCode = document.getElementById("activationCodeInput").value;
 
-    if (activationCode === "GTR155") {
+    if (activationCode === "GLE420") {
         document.getElementById("getSignalButton").style.display = "block";
     } else {
         alert("Invalid Activation Code. Try again.");

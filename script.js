@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 2.4X Signal in New Window
+    // Open 3.5X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>2.4X Predictor</title>
+            <title>3.5X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 2.4X Signal Ready!</h2>
-            <button class="x-btn">2.4X</button>
+            <h2>🚀 3.5X Signal Ready!</h2>
+            <button class="x-btn">3.5X</button>
         </body>
         </html>
     `);

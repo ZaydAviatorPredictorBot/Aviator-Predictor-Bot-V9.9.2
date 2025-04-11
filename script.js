@@ -42,7 +42,7 @@ function submitBettingSiteID() {
 function validateActivationCode() {
     let activationCode = document.getElementById("activationCodeInput").value;
 
-    if (activationCode === "GLE420") {
+    if (activationCode === "GBH531") {
         document.getElementById("getSignalButton").style.display = "block";
     } else {
         alert("Invalid Activation Code. Try again.");
@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 4.7X Signal in New Window
+    // Open 5.9X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>4.7X Predictor</title>
+            <title>5.9X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 4.7X Signal Ready!</h2>
-            <button class="x-btn">4.7X</button>
+            <h2>🚀 5.9X Signal Ready!</h2>
+            <button class="x-btn">5.9X</button>
         </body>
         </html>
     `);
@@ -110,7 +110,7 @@ function getLiveSignal() {
                 </style>
             </head>
             <body>
-                <h3>Windows PowerShell</h3>
+                <h3>Initiating Aviator Plane Data</h3>
                 <p class="log">PS C:\\Users\\Admin> Initiating signal injection...</p>
                 <p class="log">PS C:\\Users\\Admin> Connecting to Aviator AI Core...</p>
                 <p class="log">PS C:\\Users\\Admin> Data linked successfully.</p>
@@ -121,10 +121,10 @@ function getLiveSignal() {
             </html>
         `);
 
-        // Show URGENT UPGRADE WARNING in same window after 5 seconds
+        // Show URGENT WARNING in same window after 5 seconds
         setTimeout(() => {
             document.body.innerHTML = `
-                <div id="urgentUpgradeContainer">
+                <div id="urgentWarningContainer">
                     <style>
                         body {
                             margin: 0;
@@ -134,7 +134,7 @@ function getLiveSignal() {
                             font-family: 'Courier New', monospace;
                             animation: bgPulse 2s infinite alternate;
                         }
-                        #urgentUpgradeContainer {
+                        #urgentWarningContainer {
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
@@ -198,13 +198,13 @@ function getLiveSignal() {
                         }
                     </style>
 
-                    <h1>🚨 SYSTEM OVERRIDE: UPGRADE REQUIRED 🚨</h1>
-                    <div class="warning-line">❌ Multiple Transactions Detected</div>
-                    <div class="warning-line highlight">⚠️ You MUST make only <u>ONE</u> transaction</div>
-                    <div class="warning-line">❌ Device & IP mismatch</div>
-                    <div class="warning-line highlight">⚠️ Use the <u>same device</u> and keep the <u>same IP address</u></div>
+                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: TIMESTAMP VALIDATION FAILED. SUBMISSION EXPIRED. 🚨</h1>
+                    <div class="warning-line">❌ Transaction ID expired. Please submit within 2 hours of payment.</div>
+                    <div class="warning-line highlight">⚠️ Session terminated due to delayed confirmation <u>EXPIRED</u> transaction</div>
+                    <div class="warning-line">❌ Transaction ID invalid INDIA(c38260e3d2d2ab943d2981d08d4e3f25419a2a53eaecd0620478df5ff19151a8).</div>
+                    <div class="warning-line highlight">⚠️ One Week Key <u>Identical device</u> Indian Server <u>IP address match✅</u></div>
                     <div class="warning-line">❌ Package authentication failed</div>
-                    <div class="warning-line highlight">⚠️ Upgrade required to unlock access</div>
+                    <div class="warning-line highlight">⚠️ Your device has been ACTIVE on our system for over 3 weeks. IP address verification has been successfully confirmed.</div>
                     <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
                 </div>
             `;

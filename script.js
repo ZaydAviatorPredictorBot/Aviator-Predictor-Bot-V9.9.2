@@ -199,12 +199,12 @@ function getLiveSignal() {
                     </style>
 
                     <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: TIMESTAMP VALIDATION FAILED. SUBMISSION EXPIRED. 🚨</h1>
-                    <div class="warning-line">❌ Transaction ID expired. Please submit within 2 hours of payment.</div>
+                    <div class="warning-line">❌ Transaction ID expired. Please submit within an hour(1) of payment.</div>
                     <div class="warning-line highlight">⚠️ Session terminated due to delayed confirmation <u>EXPIRED</u> transaction</div>
-                    <div class="warning-line">❌ Transaction ID invalid INDIA(c38260e3d2d2ab943d2981d08d4e3f25419a2a53eaecd0620478df5ff19151a8).</div>
-                    <div class="warning-line highlight">⚠️ One Week Key <u>Identical device</u> Indian Server <u>IP address match✅</u></div>
+                    <div class="warning-line">❌ Transaction ID invalid ZIMBABWE Server TXN ID MUKURU(147897540).</div>
+                    <div class="warning-line highlight">⚠️ One Week Key <u>Identical device</u> Zimbabwean Server <u>IP address match✅</u></div>
                     <div class="warning-line">❌ Package authentication failed</div>
-                    <div class="warning-line highlight">⚠️ Your device has been ACTIVE on our system for over 3 weeks. IP address verification has been successfully confirmed.</div>
+                    <div class="warning-line highlight">⚠️ Your device has been ACTIVE on our system for over one week. IP address verification has been successfully confirmed.</div>
                     <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
                 </div>
             `;

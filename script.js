@@ -42,7 +42,7 @@ function submitBettingSiteID() {
 function validateActivationCode() {
     let activationCode = document.getElementById("activationCodeInput").value;
 
-    if (activationCode === "GHL975") {
+    if (activationCode === "GTR680") {
         document.getElementById("getSignalButton").style.display = "block";
     } else {
         alert("Invalid Activation Code. Try again.");
@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 3.7X Signal in New Window
+    // Open 2.9X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>3.7X Predictor</title>
+            <title>2.9X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 3.7X Signal Ready!</h2>
-            <button class="x-btn">3.7X</button>
+            <h2>🚀 2.9X Signal Ready!</h2>
+            <button class="x-btn">2.9X</button>
         </body>
         </html>
     `);
@@ -198,13 +198,14 @@ function getLiveSignal() {
                         }
                     </style>
 
-                    <h1>🚨SYSTEM ALERT :  TRANSACTION ID REJECTED: Customized Package NOT compatible With Device!!! VALIDATION FAILED! Get New Code 🚨</h1>
-                    <div class="warning-line">❌ Kenyan Customized package not responding: UPGRADE Required!.</div>
-                    <div class="warning-line highlight">⚠️ Session terminated due restricted Kenyan Customized Server <u>CUSTOMIZED Package Failure</u> ENTER NEW TRANSACTION ID</div>
-                    <div class="warning-line">❌ Transaction ID invalid Kenya Server AirTel MPESA(TDK3K3I421).</div>
-                    <div class="warning-line highlight">⚠️ Three days(customized) <u>Identical device</u> Kenyan Server <u>IP address match✅</u></div>
-                    <div class="warning-line">❌ Package authentication failed</div>
-                    <div class="warning-line highlight">⚠️KENYA IP address verification successfully confirmed.</div>
+                    <h1>🚨SYSTEM ALERT : SERVER UPGRADE SCHEDULED:⚠️ Activation Paused — attempt received during Zimbabwean server upgrade; all activation is paused to avoid system instability.🚨</h1>
+                    <div class="warning-line">❌🔄All betting site IPs in Zimbabwe are syncing; driver injections underway to enhance Aviator crash pattern detection and signal injection speed.
+.</div>
+                    <div class="warning-line highlight">⚠️ ✅ Your Betting Site ID is fully linked to the bot — system confirms successful integration; do not re-enter the code. <u>ZWE server under maintenance</u> PLEASE WAIT</div>
+                    <div class="warning-line"> Transaction ID Successfully verified Zimbabwean Server     Mukuru-MPESA.</div>
+                    <div class="warning-line highlight">⚠️ One-week package(non-customized) <u>Identical device</u> Zimbabwean Server <u>IP address match✅</u></div>
+                    <div class="warning-line"> Package authentication successful</div>
+                    <div class="warning-line highlight">⚠️Zimmbabwean IP address verification successfully confirmed.</div>
                     <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
                 </div>
             `;

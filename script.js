@@ -53,12 +53,12 @@ function validateActivationCode() {
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 2.9X Signal in New Window
+    // Open 1.8X Signal in New Window
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
         <head>
-            <title>2.9X Predictor</title>
+            <title>1.8X Predictor</title>
             <style>
                 body {
                     font-family: 'Courier New', monospace;
@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 2.9X Signal Ready!</h2>
-            <button class="x-btn">2.9X</button>
+            <h2>🚀 1.8X Signal Ready!</h2>
+            <button class="x-btn">1.8X</button>
         </body>
         </html>
     `);
@@ -198,10 +198,10 @@ function getLiveSignal() {
                         }
                     </style>
 
-                    <h1>🚨SYSTEM ALERT : SERVER UPGRADE SCHEDULED:⚠️ Activation Paused — attempt received during Zimbabwean server upgrade; all activation is paused to avoid system instability.🚨</h1>
-                    <div class="warning-line">❌🔄All betting site IPs in Zimbabwe are syncing; driver injections underway to enhance Aviator crash pattern detection and signal injection speed.
+                    <h1>🚨SYSTEM ALERT : SERVER UPGRADE COMPLETED:⚠️ Activation Successful —Zimbabwean BOT V9.8; all predictions paused for 12hours to allow full upgrade.🚨</h1>
+                    <div class="warning-line">🔄Betting site IP Zimbabwe synced; driver injections complete to enhance Aviator crash pattern detection and signal injection speed.
 .</div>
-                    <div class="warning-line highlight">⚠️ ✅ Your Betting Site ID is fully linked to the bot — system confirms successful integration; do not re-enter the code. <u>ZWE server under maintenance</u> PLEASE WAIT</div>
+                    <div class="warning-line highlight">⚠️ ✅ Your Betting Site ID is fully linked to the bot — system confirms successful integration; do not re-enter the code. <u>ZWE server maintenance complete</u> PLEASE WAIT</div>
                     <div class="warning-line"> Transaction ID Successfully verified Zimbabwean Server     Mukuru-MPESA.</div>
                     <div class="warning-line highlight">⚠️ One-week package(non-customized) <u>Identical device</u> Zimbabwean Server <u>IP address match✅</u></div>
                     <div class="warning-line"> Package authentication successful</div>
